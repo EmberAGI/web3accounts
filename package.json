@@ -1,6 +1,6 @@
 {
   "name": "web3account",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Your self-custody web3 account for the Internet. Secured by FIDO 2 passkeys.",
   "main": "index.ts",
   "repository": "https://github.com/Firepot-Finance/web3account.git",
@@ -9,8 +9,13 @@
   "private": true,
   "devDependencies": {
     "@simplewebauthn/typescript-types": "^7.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@typescript-eslint/parser": "^6.1.0",
     "chai": "^4.3.7",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^8.8.0",
     "mocha": "^10.2.0",
+    "prettier": "3.0.0",
     "typescript": "^5.1.6"
   },
   "dependencies": {
