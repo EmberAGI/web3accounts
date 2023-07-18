@@ -1,0 +1,20 @@
+{
+  "name": "web3account",
+  "version": "1.0.0",
+  "description": "Your self-custody web3 account for the Internet. Secured by FIDO 2 passkeys.",
+  "main": "index.ts",
+  "repository": "https://github.com/Firepot-Finance/web3account.git",
+  "author": "Tom Daniel <0xtomdaniel@gmail.com>",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "@simplewebauthn/typescript-types": "^7.0.0",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@simplewebauthn/browser": "^7.2.0",
+    "@simplewebauthn/server": "^7.3.1"
+  }
+}
