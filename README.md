@@ -1,2 +1,2 @@
 # web3account
-Your self-custody web3 account for the Internet
+Your self-custody web3 account for the Internet. Secured by FIDO 2 passkeys.
