@@ -4,7 +4,7 @@ import {
   verifyRegistration,
 } from "./relyingParty";
 
-export async function registerUser(username: string) {
+export default async function registerUser(username: string) {
   const options = await generateRegistrationOptions(username);
 
   let registration;
@@ -15,10 +15,18 @@ export async function registerUser(username: string) {
     throw error;
   }
 
-  const verificationResponse = await verifyRegistration(username, registration);
-  if (verificationResponse.verified) {
-    console.log("Registration successful");
-  } else {
-    console.error(new Error("Registration failed varification"));
+  let verificationResponse;
+  try {
+    verificationResponse = await verifyRegistration(username, registration);
+
+    if (!verificationResponse.verified) {
+      console.warn(verificationResponse.verified);
+      throw new Error("Registration failed verification");
+    }
+  } catch (error) {
+    console.error(error);
+    throw error;
   }
+
+  console.log("Registration successful");
 }

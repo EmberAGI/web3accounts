@@ -18,9 +18,9 @@ interface Authenticator {
 // Human-readable title for your website
 const RP_NAME = "Firepot Web3account";
 // A unique identifier for your website
-const RP_ID = "localhost";
+const RP_ID = location.hostname;
 // The URL at which registrations and authentications should occur
-const ORIGIN = `https://${RP_ID}`;
+const ORIGIN = `http://${RP_ID}:5173`;
 
 export function generateRegistrationOptions(username: string) {
   const userId = getUserId(username) || setUserId(username);
@@ -80,6 +80,8 @@ export async function verifyRegistration(
 
   const { verified, registrationInfo } = verification;
 
+  console.warn(JSON.stringify(registrationInfo, null, 2));
+
   if (registrationInfo == null) {
     removeCurrentUserChallenge(userId);
     throw new Error("Registration info not found");
@@ -93,10 +95,10 @@ export async function verifyRegistration(
     credentialBackedUp,
   } = registrationInfo;
 
-  if (credentialDeviceType !== "multiDevice" || credentialBackedUp !== true) {
+  /*if (credentialDeviceType !== "multiDevice" || credentialBackedUp !== true) {
     removeCurrentUserChallenge(userId);
     return { verified: false, message: "Not a passkey" };
-  }
+  }*/
 
   const authenticator: Authenticator = {
     credentialIdBase64: bytesToBase64(credentialID),

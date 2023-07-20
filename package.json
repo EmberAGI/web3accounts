@@ -2,9 +2,10 @@
   "name": "web3accounts",
   "version": "0.1.0",
   "description": "Your self-custody web3 account for the Internet. Secured by FIDO 2 passkeys.",
-  "main": "lib/index.js",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "files": [
-    "/lib",
+    "./lib",
     "package.json",
     "README.md"
   ],
@@ -15,7 +16,7 @@
   "type": "module",
   "scripts": {
     "test": "mocha",
-    "build": "rm -rf lib && npx tsc"
+    "build": "rm -rf lib && npx tsc --declaration"
   },
   "devDependencies": {
     "@simplewebauthn/typescript-types": "^7.0.0",
