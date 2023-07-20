@@ -1,5 +1,5 @@
 {
-  "name": "web3account",
+  "name": "web3accounts",
   "version": "0.1.0",
   "description": "Your self-custody web3 account for the Internet. Secured by FIDO 2 passkeys.",
   "main": "lib/index.js",
