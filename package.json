@@ -32,6 +32,8 @@
   },
   "dependencies": {
     "@simplewebauthn/browser": "^7.2.0",
-    "@simplewebauthn/server": "^7.3.1"
+    "@simplewebauthn/server": "^7.3.1",
+    "@web3auth/modal": "^6.1.7",
+    "web3": "^4.0.3"
   }
 }
