@@ -1,3 +1,3 @@
-import registerUser from "./client";
+import { registerAccount } from "./client";
 
-export default registerUser;
+export default registerAccount;
